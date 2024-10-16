@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import Header from '../components/Header';
 import {styles} from '../styles/HomeScreenStyles';
 
 
@@ -10,7 +9,7 @@ const HomeScreen = ({navigation}) => {
 
       <Button
         title="Add a new TODO"
-        onPress= {()=> navigation.navigate('Details')}
+        onPress= {()=> navigation.navigate('Add')}
       />
 
       <Button
