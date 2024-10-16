@@ -1,9 +1,11 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from 'react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import HomeSc from './src/screens/HomeSc'
+import HomeScreen from './src/screens/HomeScreen'
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
@@ -11,8 +13,17 @@ export default function App() {
         <Stack.Navigator>
             <Stack.Screen
                  name="Home"
-                 component={HomeSc}
-                 options={{title: 'Todo List'}}
+                 component={HomeScreen}
+                 options={{
+                    title: "To Do List",
+                    headerTitleStyle:{
+                        fontSize: 24,
+                        fontWeight:'bold',
+                        color: '#bd8b86'
+                    },
+
+
+                 }}
             />
         </Stack.Navigator>
     </NavigationContainer>
