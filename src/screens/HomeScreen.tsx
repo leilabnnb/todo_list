@@ -14,6 +14,11 @@ const HomeScreen = ({navigation}) => {
         setTasks(updatedTasks);
     };
 
+    const deleteTask = (taskId) => {
+        const updatedTasks = tasks.filter((task) => task.id !== taskId);
+        setTasks(updatedTasks);
+    };
+
     const removeAllTasks = () =>{
         setTasks([]);
     };
@@ -26,7 +31,7 @@ const HomeScreen = ({navigation}) => {
                 data={tasks}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({item}) =>
-                    <TaskItem task={item} toggleTaskStatus={toggleTaskStatus}/>
+                    <TaskItem task={item} toggleTaskStatus={toggleTaskStatus} deleteTask={deleteTask}/>
                 }
             />
         </View>
