@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import * as SecureStore from 'expo-secure-store';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
@@ -11,15 +10,7 @@ import AddScreen from './src/screens/AddScreen'
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-    useEffect(() => {
-        const storeData = async () => {
-          await SecureStore.setItemAsync('testKey', 'Hello SecureStore!');
-          const result = await SecureStore.getItemAsync('testKey');
-          console.log(result); // Devrait afficher "Hello SecureStore!"
-        };
 
-        storeData();
-      }, []);
     return (
         <ToDoProvider>
         <NavigationContainer>
