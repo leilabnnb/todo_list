@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, TextInput} from 'react-native';
 import { ToDoContext } from '../contexts/ToDoContext';
-
+import MyButton from '../components/MyButton';
 
 const AddScreen = ({navigation}) => {
     const [taskTitle, setTaskTitle] = useState('');
@@ -15,10 +15,8 @@ const AddScreen = ({navigation}) => {
             ...tasks,
              {id: Date.now(), title: taskTitle, completed: false},
         ]);
-
         navigation.goBack();
     };
-
 
     return (
         <View style={{ padding: 16}}>
@@ -26,9 +24,9 @@ const AddScreen = ({navigation}) => {
             placeholder= "Entrez le titre de la tâche"
             value={taskTitle}
             onChangeText={setTaskTitle}
-            style={{ borderBottomWidth: 1, marginBottom: 16}}
+            style={{ borderBottomWidth: 1, marginBottom: 16,}}
           />
-          <Button title="Ajouter la tâche" onPress={addTask}/>
+          <MyButton title="Ajouter" onPress={addTask}/>
         </View>
       );
 };

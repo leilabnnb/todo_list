@@ -7,7 +7,7 @@ const TaskItem = ({task, toggleTaskStatus, deleteTask}) => {
         <TouchableOpacity onPress={()=> deleteTask(task.id)}>
             <View
                 style={{
-                    backgroundColor: 'red',
+                    backgroundColor: '#a38d84',
                     justifyContent: 'center',
                     alignItems: 'flex-end',
                     padding: 20,
@@ -24,7 +24,7 @@ const TaskItem = ({task, toggleTaskStatus, deleteTask}) => {
                 <View
                     style={{
                         padding: 16,
-                        backgroundColor: task.completed ? '#ddd' : '#fff',
+                        backgroundColor: task.completed ? '#d4bab0' : '#fff',
                         marginVertical: 4,
                         borderRadius: 4,
                     }}
